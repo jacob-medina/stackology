@@ -13,6 +13,7 @@ router.get('/', async (req, res) => {
         },
         raw: true
     });
+    console.log(blogPostData)
     res.render('home', { blogPosts: blogPostData });
 });
 

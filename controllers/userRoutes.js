@@ -7,21 +7,21 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-    const userData = await User.findAll({
-        where: {
-            id: req.params.id
-        },
+    const userData = await User.findByPk(req.params.id, {
         attributes: {
             exclude: ['password']
         },
-        include: {
-            model: BlogPost,
-            required: true,
-        },
         raw: true
     });
-    console.log(userData);
-    res.render('user', { user: userData });
+
+    const blogPosts = await BlogPost.findAll({
+        where: {
+            user_id: req.params.id
+        },
+        include: User,
+        raw: true
+    });
+    res.render('user', { user: userData, blogPosts: blogPosts});
 });
 
 module.exports = router;

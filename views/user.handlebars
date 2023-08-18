@@ -2,9 +2,10 @@
 <header class="mb-5">
     <h1>{{name}}</h1>
 </header>
+{{/with}}
 <section>
     <h2>Blog Posts</h2>
-    {{> blogPostGrid}}
+    {{> blogPostGrid this='blogPosts'}}
+
 </section>
 
-{{/with}}

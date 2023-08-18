@@ -3,10 +3,12 @@
         <img src="{{thumbnail}}" class="card-img-top" alt="{{title}} Thumbnail">
         <div class="card-body">
             <p class="card-title">{{title}}</p>
+            {{#if user_id}}
             <p class="card-author card-text">
                 <span>by</span>
                 <a href="/user/{{'user.id'}}">{{'user.name'}}</a>
             </p>
+            {{/if}}
             
         </div>
         <div class="card-footer text-body-secondary">
