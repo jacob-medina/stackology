@@ -1,1 +1,15 @@
-<h1>Blog</h1>
+{{#with blogPost}}
+<header class="mb-5">
+    <img src="{{thumbnail}}" class="article-thumbnail" alt="{{title}} Thumbnail">
+    <h1>{{title}}</h1>
+    <div class="author">
+        <span>By</span>
+        <a href="/user/{{'user.id'}}">{{'user.name'}}</a>
+    </div>
+</header>
+
+<article>
+    {{content}}
+</article>
+
+{{/with}}

@@ -1,5 +1,16 @@
-<div class="blog-post-card">
-    <div class="card-img" style="background-image: url({{thumbnail}});"></div>
-    <p class="card-title">{{title}}</p>
-    <p class="card-subtitle">{{'user.name'}}</p> 
-</div>
+<a href="/blogpost/{{id}}">
+    <div class="blog-post-card card">
+        <img src="{{thumbnail}}" class="card-img-top" alt="{{title}} Thumbnail">
+        <div class="card-body">
+            <p class="card-title">{{title}}</p>
+            <p class="card-author card-text">
+                <span>by</span>
+                <a href="/user/{{'user.id'}}">{{'user.name'}}</a>
+            </p>
+            
+        </div>
+        <div class="card-footer text-body-secondary">
+            <small>{{format_date date_created}}</small>
+        </div>
+    </div>
+</a>

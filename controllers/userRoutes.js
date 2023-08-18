@@ -7,20 +7,21 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-    const blogPostData = await BlogPost.findOne({
+    const userData = await User.findAll({
         where: {
             id: req.params.id
         },
+        attributes: {
+            exclude: ['password']
+        },
         include: {
-            model: User,
+            model: BlogPost,
             required: true,
-            attributes: {
-                exclude: ['password']
-            }
         },
         raw: true
     });
-    res.render('blog', { blogPost: blogPostData });
+    console.log(userData);
+    res.render('user', { user: userData });
 });
 
 module.exports = router;

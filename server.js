@@ -10,7 +10,9 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // setup express-handlebars
-const hbs = create({});
+const hbs = create({
+    helpers: require('./utils/helpers')
+});
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
