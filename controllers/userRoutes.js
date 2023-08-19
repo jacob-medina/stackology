@@ -21,7 +21,7 @@ router.get('/:id', async (req, res) => {
         include: User,
         raw: true
     });
-    res.render('user', { user: userData, blogPosts: blogPosts});
+    res.render('user', { user: userData, blogPosts: blogPosts, loggedIn: req.session.loggedIn });
 });
 
 module.exports = router;
