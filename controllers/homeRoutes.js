@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
         raw: true
     });
     console.log(blogPostData)
-    res.render('home', { blogPosts: blogPostData });
+    res.render('home', { blogPosts: blogPostData, loggedIn: req.session.loggedIn });
 });
 
 module.exports = router;

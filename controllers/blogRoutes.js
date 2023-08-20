@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
         },
         raw: true
     });
-    res.render('blog', { blogPost: blogPostData });
+    res.render('blog', { blogPost: blogPostData, loggedIn: req.session.loggedIn });
 });
 
 module.exports = router;
