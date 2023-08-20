@@ -1,9 +1,11 @@
 <nav class="navbar bg-body-tertiary mb-3">
   <div class="container-fluid">
     <a href="/" class="navbar-brand">Tech Blog</a>
-    {{#unless loggedIn}}
-    <a class="btn btn-outline-success" href="/login">Login</a>
-    {{/unless}}
+    {{#if loggedIn}}
+    <btn class="btn btn-outline-dark">Logout</btn>
+    {{else}}
+    <a class="btn btn-outline-primary" href="/login">Login</a>
+    {{/if}}
 
     <form class="d-flex" role="search">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

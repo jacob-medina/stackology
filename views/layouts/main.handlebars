@@ -18,10 +18,16 @@
 </head>
 <body>
     <header>
-        {{> nav loggedIn}}
+        {{> nav this}}
     </header>
     <main>
         {{{body}}}
     </main>
+
+    {{!-- jQuery --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    {{!-- Login Script --}}
+    <script src="/js/login.js"></script>
 </body>
 </html>
