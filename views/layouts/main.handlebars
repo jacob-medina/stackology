@@ -28,6 +28,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
     {{!-- Login Script --}}
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{else}}
     <script src="/js/login.js"></script>
+    {{/if}}
+
 </body>
 </html>

@@ -2,7 +2,8 @@
   <div class="container-fluid">
     <a href="/" class="navbar-brand">Tech Blog</a>
     {{#if loggedIn}}
-    <btn class="btn btn-outline-dark">Logout</btn>
+    <a class="btn btn-primary" href="/dashboard">Dashboard</a>
+    <btn class="logout-btn btn btn-outline-dark">Logout</btn>
     {{else}}
     <a class="btn btn-outline-primary" href="/login">Login</a>
     {{/if}}

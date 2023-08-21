@@ -14,8 +14,6 @@ router.get('/', async (req, res) => {
         raw: true
     });
 
-    console.log(req.session.loggedIn);
-
     res.render('home', { blogPosts: blogPostData, loggedIn: req.session.loggedIn });
 });
 
