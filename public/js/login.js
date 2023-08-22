@@ -1,7 +1,8 @@
 function init() {
-    $('#login-form .error-message').hide();
+    $('.error-message').hide();
 
     $('#login-form').on('submit', handleLogin);
+    $('#signup-form').on('submit', handleSignup);
 }
 
 async function handleLogin(event) {
@@ -20,7 +21,7 @@ async function handleLogin(event) {
             password: password
         }),
         
-    })
+    });
     if (response.ok) {
         location.assign('/');
         return;
@@ -28,6 +29,32 @@ async function handleLogin(event) {
 
     const { message } = await response.json();
     $('#login-form .error-message').text(message).show();
+}
+
+async function handleSignup(event) {
+    event.preventDefault();
+
+    const username = $('#signup-username-input').val();
+    const password = $('#signup-password-input').val();
+
+    const response = await fetch('/api/user/signup', {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            name: username,
+            password: password
+        }),
+        
+    });
+    if (response.ok) {
+        location.assign('/');
+        return;
+    }
+
+    const { message } = await response.json();
+    $('#signup-form .error-message').text(message).show();
 }
 
 $(init());

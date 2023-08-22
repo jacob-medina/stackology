@@ -1,22 +1,55 @@
-<h1>Login</h1>
+<div class="container-fluid display-flex g-5">
+    <div class="row">
+        <section class="login-section col-md-5">
+            <h1>Login</h1>
 
-<form id="login-form">
-    <div class="mb-3">
-        <label for="login-username-input" class="form-label">Username</label>
-        <input type="text" class="form-control" id="login-username-input">
+            <form id="login-form">
+                <div class="mb-3">
+                    <label for="login-username-input" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="login-username-input">
+                </div>
+
+                <div class="mb-3">
+                    <label for="login-password-input" class="form-label">Password</label>
+                    <input class="form-control" id="login-password-input" type="password">
+                </div>
+
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Log In">
+                </div>
+
+                <div class="mb-3 hide">
+                    <p class="error-message text-danger">An error has occurred.</p>
+                </div>
+            </form>
+        </section>
+
+        <div class="d-flex col-md-2" style="height: 100%;">
+            <div class="vr"></div>
+        </div>
+
+        <section class="signup-section col-md-5">
+            <h1>Sign Up</h1>
+
+            <form id="signup-form">
+                <div class="mb-3">
+                    <label for="signup-username-input" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="signup-username-input">
+                </div>
+
+                <div class="mb-3">
+                    <label for="signup-password-input" class="form-label">Password</label>
+                    <input class="form-control" id="signup-password-input" type="password">
+                </div>
+
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Sign Up">
+                </div>
+
+                <div class="mb-3 hide">
+                    <p class="error-message text-danger">An error has occurred.</p>
+                </div>
+            </form>
+        </section>
     </div>
-
-    <div class="mb-3">
-        <label for="login-password-input" class="form-label">Password</label>
-        <input class="form-control" id="login-password-input" type="password">
-    </div>
-
-    <div class="mb-3">
-        <input class="btn btn-primary" type="submit">
-    </div>
-
-    <div class="mb-3 hide">
-        <p class="error-message text-danger">An error has occurred.</p>
-    </div>
-
-</form>
+</div>
