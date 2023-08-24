@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const auth = require('../utils/auth.js');
-const { User, BlogPost } = require('../models');
+const { User, BlogPost, Comment } = require('../models');
 
 // redirect to home page if user includes no ID
 router.get('/', (req, res) => {
@@ -30,6 +30,21 @@ router.get('/:id', async (req, res) => {
         },
         raw: true
     });
+
+    const commentData = await Comment.findAll({
+        where: {
+            blog_post_id: blogPostData.id
+        },
+        include: {
+            model: User,
+            required: true,
+            attributes: {
+                exclude: ['password']
+            }
+        },
+        raw: true
+    });
+    console.log(commentData);
     res.render('blog', { blogPost: blogPostData, loggedIn: req.session.loggedIn });
 });
 
