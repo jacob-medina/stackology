@@ -44,8 +44,31 @@ router.post('/', auth, async (req, res) => {
 
 router.put('/:id', async (req, res) => {
     try {
-        const { title, content } = req.body;
+        const blogPost = await BlogPost.findByPk(req.params.id, {
+            raw: true
+        });
 
+        if (!blogPost) {
+            res.status(404).json({ message: "Could not find data." });
+            return;
+        }
+
+        if (blogPost.userId !== req.session.userId) {
+            res.status(401).json({ message: "Unauthorized request." });
+            return;
+        }
+
+        const { title, thumbnail, content } = req.body;
+
+        const updated = await BlogPost.update({ title, thumbnail, content }, {
+            where: {
+                id: req.params.id
+            }
+        });
+
+        if (!updated[0]) throw new Error('Could not update blog post ' + req.params.id);
+
+        res.status(200).json({ message: "Update successful!" });
     }
     catch(err) {
         console.error(err);
@@ -58,8 +81,6 @@ router.delete('/:id', async (req, res) => {
         const blogPost = await BlogPost.findByPk(req.params.id, {
             raw: true
         });
-
-        console.log(req.params.id);
 
         if (!blogPost) {
             res.status(404).json({ message: "Could not find data." });

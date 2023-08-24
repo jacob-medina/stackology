@@ -3,8 +3,9 @@ function init() {
     $('.delete-post-btn').on('click', handleDeletePost);
 }
 
-function handleEditPost() {
-
+async function handleEditPost() {
+    const postId = $(this).attr('data-post-id');
+    location.assign(`/blogpost/edit/${postId}`);
 }
 
 async function handleDeletePost() {
