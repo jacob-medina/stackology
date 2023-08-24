@@ -1,0 +1,27 @@
+<section class="container">
+    <header class="mb-5">
+        <div class="row">
+            <div class="col-sm-8 col-md-6">
+                <div class="form-floating">
+                    <input id="blog-title" class="form-control" type="text" placeholder="Your title here">
+                    <label for="blog-title">Title</label>
+                </div>
+                <br>
+                <div class="form-floating mb-3">
+                    <input id="blog-thumbnail" class="form-control" type="url" placeholder="Thumbnail URL" value="/images/thumbnail.jpg">
+                    <label for="blog-thumbnail">Thumbnail URL</label>
+                </div>
+                <img id="thumbnail" src="/images/thumbnail.jpg" alt="Thumbnail could not load">
+            </div>
+
+        </div>
+    </header>
+
+    <article>
+        <textarea id="blog-content" class="form-control" placeholder="Start writing..."></textarea>
+    </article>
+
+    <br>
+
+    <button class="post-blog-btn btn btn-primary btn-lg">Post</button>
+</section>

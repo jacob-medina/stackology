@@ -1,0 +1,26 @@
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    {{#if blogPosts}}  
+        {{#each blogPosts as |post|}}
+            <div class="col blog-card-container" data-post-id="{{id}}">
+                    <div class="blog-post-card card">
+                        <a href="/blogpost/{{id}}">
+                            <img src="{{thumbnail}}" class="card-img-top" alt="{{title}} Thumbnail">
+                            <div class="card-body">
+                                <p class="card-title">{{title}}</p>
+                                <small>{{format_date date_created}}</small>
+                            </div>
+                        </a>
+                        <div class="card-footer text-body-secondary">
+                            <div class="card-hover-container d-flex justify-content-center align-items-center g-5">
+                                <button class="edit-post-btn btn" data-post-id="{{id}}">Edit</button>
+                                <button class="delete-post-btn btn" data-post-id="{{id}}">Delete</button>
+                            </div>
+                            
+                        </div>
+                    </div>
+            </div>
+        {{/each}}
+    {{else}}
+        <p>You have no blog posts.</p>
+    {{/if}}
+</div>

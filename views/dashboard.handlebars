@@ -1,1 +1,12 @@
 <h1>Dashboard</h1>
+
+{{#with user}}
+<header class="mb-5">
+    <h1>{{name}}</h1>
+</header>
+{{/with}}
+<section>
+    <h2>Your Posts</h2>
+    {{> dashboardPostGrid this='blogPosts'}}
+
+</section>

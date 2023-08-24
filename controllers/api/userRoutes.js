@@ -28,7 +28,8 @@ router.post('/login', async (req, res) => {
         
         req.session.save(() => {
             req.session.loggedIn = true;
-            res.status(200).json({ message: "Logged in!" })
+            req.session.userId = user.id;
+            res.status(200).json({ userId: user.id, message: "Logged in!" })
         });
     } 
     catch(err) {
@@ -69,10 +70,11 @@ router.post('/signup', async (req, res) => {
             return;
         }
 
-        await User.create({ name: username, password }, { returning: true, individualHooks: true });
+        const newUser = await User.create({ name: username, password }, { returning: true, individualHooks: true });
 
         req.session.save(() => {
             req.session.loggedIn = true;
+            req.session.userId = newUser.id;
             res.status(200).json({ message: "Signed up" })
         });
     } 

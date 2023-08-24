@@ -30,8 +30,13 @@
     {{!-- Login Script --}}
     {{#if loggedIn}}
     <script src="/js/logout.js"></script>
+    <script src="/js/dashboard.js"></script>
     {{else}}
     <script src="/js/login.js"></script>
+    {{/if}}
+
+    {{#if newBlog}}
+    <script src="/js/newBlog.js"></script>
     {{/if}}
 
 </body>

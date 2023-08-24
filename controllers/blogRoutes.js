@@ -1,9 +1,17 @@
 const router = require('express').Router();
+const auth = require('../utils/auth.js');
 const { User, BlogPost } = require('../models');
 
 // redirect to home page if user includes no ID
 router.get('/', (req, res) => {
     res.redirect('/');
+});
+
+router.get('/new', auth, (req, res) => {
+    res.render('newBlog', { 
+        newBlog: true,
+        loggedIn: req.session.loggedIn
+    });
 });
 
 router.get('/:id', async (req, res) => {

@@ -1,3 +1,5 @@
+let userId;
+
 function init() {
     $('.error-message').hide();
 
@@ -23,6 +25,7 @@ async function handleLogin(event) {
         
     });
     if (response.ok) {
+        const { userId } = await response.json();
         location.assign('/');
         return;
     }
@@ -49,6 +52,7 @@ async function handleSignup(event) {
         
     });
     if (response.ok) {
+        const { userId } = await response.json();
         location.assign('/');
         return;
     }
