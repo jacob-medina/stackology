@@ -18,20 +18,25 @@ async function handleNewComment() {
     });
 
     if (!res.ok) {
-        console.error(res.json().message);
+        console.error(await res.json().message);
         return;
     }
 
+    const data = await res.json();
+
+    const date_created = (await (await fetch(`/api/helper/formatDate/${data.date_created}`)).json()).date ?? '';
+
     $('.new-comment-card .card-body').empty();
     $('.new-comment-card .card-body').append(
-        `<p class="fst-italic">Thanks for commenting!</p>`
+        `<p class="fst-italic mb-0">Thanks for commenting!</p>`
     );
     $(
 `<div class="card mt-3 col-sm-10 col-md-10 col-lg-7">
-    <div class="card-body">
-        <strong class="fs-5">You</strong>
-        <p>${commentText}</p>
-    </div>
+<div class="card-body">
+  <a href="/user/${data.user_id}" class="fs-5 green-link">${data.user_name}</a>
+  <p>${data.text}</p>
+  <small class="text-body-secondary">${date_created}</small>
+</div>
 </div>`).insertAfter('.new-comment-card');
 }
 

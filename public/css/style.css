@@ -77,13 +77,10 @@ nav {
 }
 
 .blog-post-card:hover {
-    box-shadow: 0px 5px 8px var(--shadow-color);
+    box-shadow: 0px 3px 20px var(--shadow-color);
+    transform: scale(1.01);
+    transition: transform 0.2s;
     cursor: pointer;
-}
-
-.blog-post-card:hover .card-img-top {
-    object-position: 50% 40%;
-    transition: 0.3s;
 }
 
 .blog-post-card .card-img-top {

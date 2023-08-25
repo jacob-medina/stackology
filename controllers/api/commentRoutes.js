@@ -24,7 +24,16 @@ router.post('/', auth, async (req, res) => {
             user_id: req.session.userId,
         });
 
-        res.status(200).json(newComment);
+        const { name: user_name } = await User.findByPk(req.session.userId);
+
+
+        res.status(200).json({
+            text: newComment.text,
+            blog_post_id: newComment.blog_post_id,
+            user_id: newComment.user_id,
+            user_name: user_name,
+            date_created: newComment.date_created
+        });
 
     } catch(err) {
         console.error(err);
