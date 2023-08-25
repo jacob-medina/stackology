@@ -1,11 +1,13 @@
 {{#with user}}
-<header class="mb-5">
-    <h1>{{name}}</h1>
-</header>
-{{/with}}
-<section>
-    <h2>Blog Posts</h2>
-    {{> blogPostGrid this='blogPosts'}}
+<div class="container">
+    <header class="text-center mb-5">
+        <h1>{{name}}</h1>
+    </header>
+    {{/with}}
+    <section>
+        <h2>Blog Posts</h2>
+        {{> blogPostGrid this='blogPosts'}}
 
-</section>
+    </section>
+</div>
 

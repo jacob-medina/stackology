@@ -1,12 +1,49 @@
-<nav class="navbar bg-body-tertiary mb-3">
+<nav class="navbar navbar-expand">
   <div class="container-fluid">
-    <a href="/" class="navbar-brand">Tech Blog</a>
-    {{#if loggedIn}}
-    <a class="btn btn-outline-dark" href="/dashboard">Dashboard</a>
-    <btn class="logout-btn btn btn-outline-dark">Logout</btn>
-    <a href="/blogpost/new" class="btn btn-primary">Write</a>
-    {{else}}
-    <a class="btn btn-outline-primary" href="/login">Login</a>
-    {{/if}}
+    <a href="/" class="navbar-brand">
+      <i class="bi bi-stack"></i>
+      Stackology
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        {{#if loggedIn}}
+        <li class="nav-item">
+          <a class="nav-link" href="/dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="logout-btn nav-link" href="#">Logout</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="btn btn-primary" href="/login">Login</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
   </div>
 </nav>
+
+{{!-- <nav class="navbar mt-2 mb-3">
+  <div class="container">
+    <a href="/" class="navbar-brand">
+      <i class="bi bi-stack"></i>
+      Stackology
+    </a>
+
+    <div class="d-flex justify-content-end gap-5">
+      {{#if loggedIn}}
+      <a class="btn btn-outline-dark" href="/dashboard">Dashboard</a>
+      <btn class="logout-btn btn btn-outline-dark">Logout</btn>
+      <a href="/blogpost/new" class="btn btn-primary">
+        <i class="bi bi-pencil-square"></i>
+        Write
+      </a>
+      {{else}}
+      <a class="btn btn-outline-primary" href="/login">Login</a>
+      {{/if}}
+    </div>
+  </div>
+</nav> --}}

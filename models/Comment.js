@@ -32,6 +32,10 @@ Comment.init({
             key: 'id'
         }
     },
+    date_created: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW
+    }
 }, {
     sequelize,
     modelName: 'comment',

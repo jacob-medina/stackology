@@ -1,27 +1,52 @@
 [
     {
         "title": "The History of HTML",
-        "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Programming_code.jpg/1200px-Programming_code.jpg",
-        "content": "Idk when it was made lol."
+        "thumbnail": "https://www.oxfordwebstudio.com/user/pages/06.da-li-znate/sta-je-html/sta-je-html.jpg",
+        "content": "HTML, which stands for HyperText Markup Language, is the standard markup language used to create web pages. It was first introduced in 1993 by Tim Berners-Lee, the inventor of the World Wide Web. HTML allows developers to structure content on the web by using elements and tags. Over the years, HTML has evolved with various versions, and it continues to play a fundamental role in web development.\n\nThe early versions of HTML were simple and limited in terms of styling and interactivity. However, with the introduction of CSS (Cascading Style Sheets) and JavaScript, web developers gained the ability to create more dynamic and visually appealing websites.\n\nHTML5, the latest version of HTML, introduced a range of new elements and attributes, making it easier to embed multimedia, handle forms, and structure content. Today, HTML is a core technology in web development, forming the backbone of every web page."
     },
     {
-        "title": "CSS Tips & Tricks",
+        "title": "Introduction to CSS",
         "thumbnail": "https://www.oxfordwebstudio.com/user/pages/06.da-li-znate/sta-je-css/sta-je-css.png",
-        "content": "Use flexbox to center a div."
+        "content": "Cascading Style Sheets (CSS) is a crucial technology that complements HTML by controlling the visual presentation of web pages. CSS allows developers to define how elements should be styled, including properties like color, font, layout, and spacing.\n\nIn the early days of the web, styling was often applied directly within HTML using inline styles. However, this approach became cumbersome for larger projects. CSS was introduced to separate the concerns of content and presentation, enabling developers to create consistent and maintainable designs.\n\nCSS offers various selectors to target specific elements, classes, or IDs in HTML. With the advent of CSS preprocessors like Sass and LESS, developers can write more efficient and organized stylesheets. Additionally, CSS frameworks like Bootstrap provide ready-to-use styles and components to streamline the design process."
     },
     {
-        "title": "Backend in 2 minutes",
-        "thumbnail": "https://media.gcflearnfree.org/content/5e31ca08bc7eff08e4063776_01_29_2020/ProgrammingIllustration.png",
-        "content": "It can use Express and stuff."
+        "title": "JavaScript Fundamentals",
+        "thumbnail": "https://miro.medium.com/v2/resize:fit:1400/1*LyZcwuLWv2FArOumCxobpA.png",
+        "content": "JavaScript, often abbreviated as JS, is a versatile programming language that adds interactivity and dynamic behavior to websites. Developed by Brendan Eich in the mid-1990s, JavaScript quickly became an essential component of web development.\n\nJavaScript allows developers to manipulate the Document Object Model (DOM), which represents the structure of a web page. This manipulation enables real-time updates, animations, and user interactions without requiring a page reload.\n\nIn addition to front-end development, JavaScript is also widely used on the server-side through platforms like Node.js. Modern JavaScript frameworks and libraries, such as React, Vue.js, and Angular, simplify complex UI development by providing components and state management.\n\nWith the rise of progressive web apps (PWAs) and serverless architectures, JavaScript's role in full-stack development has expanded further."
     },
     {
-        "title": "Handlebars",
-        "thumbnail": "https://i.shgcdn.com/d8e44a45-126d-40df-bdd3-afd8fa369500/-/format/auto/-/preview/3000x3000/-/quality/lighter/",
-        "content": "It is the view of the MVC."
+        "title": "Building Responsive Web Design",
+        "thumbnail": "https://www.tributemedia.com/hubfs/guy%20holding%20mobile%20device.jpg",
+        "content": "Responsive web design is a crucial approach in modern web development that ensures websites look and function well on various devices and screen sizes. With the proliferation of smartphones, tablets, and different-sized monitors, creating a responsive user experience has become essential.\n\nResponsive design is achieved through fluid layouts, flexible images, and media queries. Media queries allow developers to apply different styles based on the device's characteristics, such as screen width and orientation.\n\nBy implementing responsive design principles, web developers can create a seamless experience for users across devices, leading to improved user satisfaction and engagement."
     },
     {
-        "title": "React",
-        "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Programming_code.jpg/1200px-Programming_code.jpg",
-        "content": "You shall learn soon, young one..."
+        "title": "Backend Development with Node.js",
+        "thumbnail": "https://images.ctfassets.net/aq13lwl6616q/7cS8gBoWulxkWNWEm0FspJ/c7eb42dd82e27279307f8b9fc9b136fa/nodejs_cover_photo_smaller_size.png",
+        "content": "Node.js is a server-side JavaScript runtime that enables developers to build scalable and efficient web applications. Unlike traditional server-side languages, Node.js operates using an event-driven, non-blocking I/O model, which makes it well-suited for handling a large number of concurrent connections.\n\nNode.js is commonly used to create APIs, handle data processing, and manage server-side logic. It also has a vibrant ecosystem of packages available through the Node Package Manager (NPM).\n\nOne of the standout features of Node.js is its ability to share code between the server and the client, enhancing the overall development process and improving performance."
+    },
+    {
+        "title": "Working with Databases: SQL vs. NoSQL",
+        "thumbnail": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191104165821/SQL-Vs-NoSQL1.png",
+        "content": "Databases are a fundamental component of web applications, storing and managing data efficiently. There are two primary categories of databases: SQL (Structured Query Language) and NoSQL (Not Only SQL).\n\nSQL databases, like MySQL and PostgreSQL, use a structured schema and a defined set of relationships between tables. They are suitable for applications that require complex querying and data integrity.\n\nOn the other hand, NoSQL databases, such as MongoDB and Cassandra, are schema-less and offer high scalability and flexibility. They are often chosen for applications that require handling large volumes of unstructured or semi-structured data.\n\nChoosing between SQL and NoSQL databases depends on the specific needs of your project, including data modeling, scalability, and querying requirements."
+    },
+    {
+        "title": "Authentication and Authorization",
+        "thumbnail": "https://swoopnow.com/wp-content/uploads/2020/07/User-Authentication_-Understanding-the-Basics-Top-Tips.jpg",
+        "content": "Authentication and authorization are critical aspects of web application security. Authentication verifies the identity of users, ensuring they are who they claim to be. Authorization, on the other hand, controls the access and permissions users have within the application.\n\nCommon authentication methods include username/password, token-based authentication, and OAuth. Authorization involves defining roles and permissions for users to access different parts of the application.\n\nImplementing robust authentication and authorization mechanisms is essential to protect sensitive data and ensure that users can only perform actions they are authorized to do."
+    },
+    {
+        "title": "Introduction to Frontend Frameworks",
+        "thumbnail": "https://www.gurutechnolabs.com/wp-content/uploads/2020/03/Top-Front-End-Frameworks.jpg",
+        "content": "Frontend frameworks are pre-designed collections of UI components and tools that simplify the process of building user interfaces. They provide a structured and consistent approach to UI development, making it easier to create interactive and responsive web applications.\n\nFrameworks like React, Vue.js, and Angular are popular choices among developers. They offer features such as component reusability, state management, and virtual DOM manipulation.\n\nFrontend frameworks not only enhance development speed but also promote best practices, modularity, and maintainability in web application projects."
+    },
+    {
+        "title": "API Design and RESTful Architecture",
+        "thumbnail": "https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/content/cover_image_file/cover_image/969909/regular_1708x683_cover-5-new-things-rest-specification-b6d2c20296631ee2e258adff7f9766ea.png",
+        "content": "APIs (Application Programming Interfaces) play a crucial role in enabling communication between different software components. REST (Representational State Transfer) is a widely used architectural style for designing web APIs.\n\nRESTful APIs are designed around a set of principles, including stateless communication, resource-based URLs, and standard HTTP methods (GET, POST, PUT, DELETE). They allow developers to create scalable and flexible APIs that can be consumed by various clients.\n\nDesigning APIs following RESTful principles simplifies integration, promotes interoperability, and ensures a consistent user experience."
+    },
+    {
+        "title": "Deploying Web Apps: Hosting and Deployment",
+        "thumbnail": "https://kinsta.com/wp-content/uploads/2021/11/what-is-web-hosting-1.jpg",
+        "content": "Deploying web applications involves making them accessible on the internet for users to access. The deployment process includes tasks like choosing a hosting provider, configuring server environments, and optimizing performance.\n\nPopular hosting options include shared hosting, virtual private servers (VPS), cloud platforms (AWS, Azure, Google Cloud), and platform-as-a-service (PaaS) solutions.\n\nTo ensure a smooth deployment, developers need to consider factors such as security measures, continuous integration and continuous deployment (CI/CD) pipelines, and monitoring for performance and uptime."
     }
 ]

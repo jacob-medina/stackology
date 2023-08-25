@@ -42,6 +42,12 @@ BlogPost.init({
             post.thumbnail = '/images/thumbnail.jpg';
             return post;
         },
+        // beforeBulkCreate: (posts) => posts.map(post => {
+        //     if (post.thumbnail) return post;
+
+        //     post.thumbnail = '/images/thumbnail.jpg';
+        //     return post;
+        // }),
         beforeUpdate: (post) => {
             if (post.thumbnail) return post;
 

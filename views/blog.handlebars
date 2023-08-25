@@ -1,15 +1,53 @@
 {{#with blogPost}}
-<header class="mb-5">
-    <img src="{{thumbnail}}" class="article-thumbnail" alt="{{title}} Thumbnail">
-    <h1>{{title}}</h1>
-    <div class="author">
-        <span>By</span>
-        <a href="/user/{{'user.id'}}">{{'user.name'}}</a>
-    </div>
-</header>
+<div class="container">
+    <header class="mb-5">
+        <img src="{{thumbnail}}" class="article-thumbnail" alt="{{title}} Thumbnail">
+        <h1 class="mt-4">{{title}}</h1>
+        <div class="author fs-4">
+            <span>by</span>
+            <a href="/user/{{'user.id'}}" class="green-link">{{'user.name'}}</a>
+        </div>
+        <small>{{format_date date_created}}</small>
+    </header>
 
-<article>
-    {{content}}
-</article>
+    <div class="row">
+        <article class="col-md-10 col-lg-10">
+            {{content}}
+        </article>
+    </div>
 
 {{/with}}
+
+    <section class="comments-section mt-5">
+        <h2>Comments</h2>
+        <div class="container-fluid ps-0">
+            <div class="comments-container column">
+                {{!-- Comment here input --}}
+                <div class="new-comment-card card mt-3 col-sm-10 col-md-10 col-lg-7">
+                    <div class="card-body">
+                        {{#if loggedIn}}
+                        <input id="new-comment" type="text" placeholder="Write a comment here...">
+                        <button class="new-comment-btn btn btn-primary mt-4">
+                            <i class="bi bi-send-fill"></i>
+                            Send
+                        </button>
+                        {{else}}
+                        <div>
+                            <a class="green-link" href="/login">Sign up</a>
+                            <span>&nbsp;or&nbsp;</span>
+                            <a class="green-link" href="/login">log in</a>
+                            <span>&nbsp;to write a comment.</span>
+                        </div>
+                        {{/if}}
+                    </div>
+                </div>
+
+                {{#each comments as |comment|}}
+                    {{> comment comment}}
+                {{/each}}
+  
+            </div>
+        </div>
+    </section>
+</div>
+

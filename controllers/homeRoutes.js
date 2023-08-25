@@ -3,7 +3,6 @@ const { User, BlogPost } = require('../models');
 
 router.get('/', async (req, res) => {
     const blogPostData = await BlogPost.findAll({
-        limit: 20,
         include: {
             model: User,
             required: true,

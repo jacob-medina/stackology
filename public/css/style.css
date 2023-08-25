@@ -2,11 +2,65 @@
     --text-color: black;
     --text-light: rgb(49, 49, 49);
     --shadow-color: #00000022;
+    --green: #00B050;
+    --green-darker: #009543;
+    --green-darkest: #00873d;
 }
 
 body {
     font-family: 'Rubik', sans-serif;
     font-weight: normal;
+}
+
+main {
+    min-height: 50vh;
+}
+
+nav {
+    background-color: transparent;
+}
+
+.navbar-brand, .navbar-brand:visited {
+    color: var(--green);
+}
+
+.navbar-brand:hover, .navbar-brand:focus {
+    color: var(--green-darker);
+}
+
+.navbar-brand:active {
+    color: var(--green-darkest);
+}
+
+.btn-primary, .btn-primary:visited {
+    background-color: var(--green) !important;
+    border: none;
+}
+
+.btn-primary:hover, .btn:focus {
+    background-color: var(--green-darker) !important;
+}
+
+.btn-primary:active {
+    background-color: var(--green-darkest) !important;
+}
+
+.btn-outline-primary {
+    background-color: transparent;
+    color: var(--green);
+    border-color: var(--green);
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+    background-color: var(--green-darker);
+    color: white;
+    border-color: var(--green-darker);
+}
+
+.btn-outline-primary:active {
+    background-color: var(--green-darkest);
+    color: white;
+    border-color: var(--green-darkest);
 }
 
 .blog-post-card {
@@ -46,24 +100,34 @@ body {
     overflow: hidden;
 }
 
-.card-author {
-    opacity: 70%;
-}
-
 .blog-post-card a {
     color: var(--text-color);
     text-decoration: none;
 }
 
-.card-author a {
-    color: var(--text-light);
+.green-link {
+    text-decoration: none;
+    color: var(--green) !important;
     font-weight: bold;
+}
+
+.green-link:hover {
+    color: var(--green-darker) !important;
+}
+
+.card-author span {
+    color: gray;
 }
 
 .article-thumbnail {
     width: 100%;
     height: 400px;
     object-fit: cover;
+}
+
+article {
+    font-size: 1.2rem;
+    line-height: 2.5;
 }
 
 #blog-title,
@@ -89,5 +153,9 @@ body {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    
+}
+
+#new-comment {
+    width: 100%;
+    border: none;
 }

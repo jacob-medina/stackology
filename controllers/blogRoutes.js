@@ -35,6 +35,9 @@ router.get('/:id', async (req, res) => {
         where: {
             blog_post_id: blogPostData.id
         },
+        order: [
+            ['id', 'DESC']
+        ],
         include: {
             model: User,
             required: true,
@@ -44,8 +47,12 @@ router.get('/:id', async (req, res) => {
         },
         raw: true
     });
-    console.log(commentData);
-    res.render('blog', { blogPost: blogPostData, loggedIn: req.session.loggedIn });
+
+    res.render('blog', {
+        blogPost: blogPostData,
+        loggedIn: req.session.loggedIn,
+        comments: commentData
+    });
 });
 
 router.get('/edit/:id', auth, async (req, res) => {
