@@ -1,4 +1,4 @@
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+<div class="dashboard-grid-container row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     {{#if blogPosts}}  
         {{#each blogPosts as |post|}}
             <div class="col blog-card-container ps-0" data-post-id="{{id}}">
@@ -20,11 +20,12 @@
                     </div>
             </div>
         {{/each}}
-    {{else}}
-        <p>You have no blog posts.</p>
-        <a href="/blogpost/new" class="btn btn-primary">
-        <i class="bi bi-pencil-square"></i>
-        Write a Blog Post
-      </a>
     {{/if}}
+        <div class="no-posts flex-column d-none">
+            <p>You have no blog posts.</p>
+            <a href="/blogpost/new" class="btn btn-primary">
+                <i class="bi bi-pencil-square"></i>
+                Write a Post
+            </a>
+        </div>
 </div>

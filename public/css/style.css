@@ -20,7 +20,8 @@ nav {
     background-color: transparent;
 }
 
-.navbar-brand, .navbar-brand:visited {
+.navbar-brand, .navbar-brand:visited,
+.logo {
     color: var(--green);
 }
 
