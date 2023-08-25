@@ -6,6 +6,8 @@ const { create } = require('express-handlebars');
 const session = require('express-session');
 const controllers = require('./controllers');
 const bcrypt = require('bcrypt');
+const sequelize = require('./config/connection.js');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // setup app
 const app = express();
@@ -18,12 +20,19 @@ const hbs = create({
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+const sessionStore = new SequelizeStore({
+    db: sequelize
+});
+
 const sess = {
-    secret: bcrypt.hashSync(process.env.SESSION_SECRET, 10),
+    secret: process.env.SESSION_SECRET,
     cookie: {},
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    store: sessionStore
 }
+
+sessionStore.sync();
 
 app.use(session(sess));
 
@@ -34,6 +43,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(controllers);
 
-app.listen(PORT, () => {
-    console.info(`Listening on port ${PORT} at http://localhost:${PORT}`);
-});
+sequelize.sync({ force: false })
+.then(() => 
+    app.listen(PORT, () => {
+        console.info(`Listening on port ${PORT} at http://localhost:${PORT}`);
+    })
+);
