@@ -1,3 +1,6 @@
+const blogContent = document.querySelector('#blog-content');
+blogContent.style.height = blogContent.scrollHeight + 'px';
+
 $('#blog-content').on('input', function() {
     this.style.height = this.scrollHeight + 'px';
 });

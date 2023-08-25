@@ -31,6 +31,11 @@ router.get('/:id', async (req, res) => {
         raw: true
     });
 
+    if (!blogPostData) {
+        res.status(404).json({ message: "Could not find blog post." });
+        return;
+    }
+
     const commentData = await Comment.findAll({
         where: {
             blog_post_id: blogPostData.id

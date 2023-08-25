@@ -37,7 +37,7 @@ nav {
     border: none;
 }
 
-.btn-primary:hover, .btn:focus {
+.btn-primary:hover, .btn-primary:focus {
     background-color: var(--green-darker) !important;
 }
 
@@ -61,6 +61,10 @@ nav {
     background-color: var(--green-darkest);
     color: white;
     border-color: var(--green-darkest);
+}
+
+.delete-post-btn:hover {
+    color: #a40000;
 }
 
 .blog-post-card {
@@ -143,8 +147,11 @@ article {
 
 #blog-content {
     display: block;
+    padding: 0;
+
     border: none;
     border-radius: 0;
+
     resize: none;
     overflow: hidden;
 }

@@ -1,10 +1,10 @@
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
     {{#if blogPosts}}  
         {{#each blogPosts as |post|}}
-            <div class="col blog-card-container" data-post-id="{{id}}">
+            <div class="col blog-card-container ps-0" data-post-id="{{id}}">
                     <div class="blog-post-card card">
                         <a href="/blogpost/{{id}}">
-                            <img src="{{thumbnail}}" class="card-img-top" alt="{{title}} Thumbnail">
+                            <img src="{{thumbnail}}" class="card-img-top" alt="{{title}} Thumbnail" onerror="this.setAttribute('src', '/images/thumbnail.jpg')">
                             <div class="card-body">
                                 <p class="card-title">{{title}}</p>
                                 <small>{{format_date date_created}}</small>

@@ -26,7 +26,10 @@
     {{#if newBlog}}
     <button class="post-blog-btn btn btn-primary btn-lg">Post</button>
     {{else}}
-    <button class="update-blog-btn btn btn-primary btn-lg">Update</button>
+    <div class="d-flex align-items-center gap-4">
+        <button class="update-blog-btn btn btn-primary btn-lg">Update</button>
+        <a class="nav-link" href="/dashboard">Cancel</a>
+    </div>
     {{/if}}
 
 </section>

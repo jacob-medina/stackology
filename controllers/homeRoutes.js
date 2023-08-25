@@ -10,6 +10,9 @@ router.get('/', async (req, res) => {
                 exclude: ['password']
             }
         },
+        order: [
+            ['id', 'DESC']
+        ],
         raw: true
     });
 

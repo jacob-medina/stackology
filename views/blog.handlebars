@@ -1,7 +1,7 @@
 {{#with blogPost}}
 <div class="container">
     <header class="mb-5">
-        <img src="{{thumbnail}}" class="article-thumbnail" alt="{{title}} Thumbnail">
+        <img src="{{thumbnail}}" class="article-thumbnail" alt="{{title}} Thumbnail" onerror="this.setAttribute('src', '/images/thumbnail.jpg')">
         <h1 class="mt-4">{{title}}</h1>
         <div class="author fs-4">
             <span>by</span>

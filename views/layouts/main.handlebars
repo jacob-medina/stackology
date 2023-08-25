@@ -40,11 +40,13 @@
     {{!-- jQuery --}}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
-    {{!-- Login Script --}}
+    <script src="/js/thumbnails.js"></script>
+
     {{#if loggedIn}}
     <script src="/js/logout.js"></script>
     <script src="/js/dashboard.js"></script>
     <script src="/js/comment.js"></script>
+
     {{else}}
     <script src="/js/login.js"></script>
     {{/if}}
